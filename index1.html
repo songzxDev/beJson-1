@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BeJson</title>
+	<link rel = "Shortcut Icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="./style/layui.css">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+			background: #e8eae9;
+		}
+		header{
+			display: flex;
+			width: 100%;
+			height: 54px;
+    		background: #2d8cf0;
+    		justify-content:center;
+    		line-height: 54px;
+    		margin-bottom: 20px;
+		}
+		header .title{
+			color: #fff;
+		}
+		#container{
+    		width: 1101px;
+    		margin: 0 auto;
+    		border: 1px dashed #c9c9c9;
+		}
+		#container .textarea-group{
+			display: inline-block;
+		}
+		#container .textarea-wrap{
+			padding: 7px 0px; 
+			background-color: rgb(221, 221, 221); 
+			position: absolute; 
+			width: 30px; height: 296px;
+		}
+		#container .textarea-rows{
+			color: black; 
+			width: 30px; 
+			height: 296px; 
+			font-size: 14px; 
+			line-height: 20px; 
+			position: absolute; 
+			overflow: hidden; 
+			margin: 0px; 	
+			padding: 0px; 
+			text-align: center; 
+			font-family: inherit;
+		}
+		#container #validate{
+			color: #fff;
+   			background-color: #2d8cf0;
+   			border-color: #2d8cf0;
+   			margin: 20px;
+   			text-align: center;
+   			-ms-touch-action: manipulation;
+   			cursor: pointer;
+   			border: 1px solid transparent;
+   			line-height: 1.5;
+   			-webkit-user-select: none;
+   			-moz-user-select: none;
+   			-ms-user-select: none;
+   			padding: 6px 80px;
+   			border-radius: 4px;
+   			transition: color .2s linear,background-color .2s linear,border .2s linear;
+		}
+		#container #results{
+			background: #fff;
+			width: 100%;
+    		box-sizing: border-box;
+		}
+		#container #json_input{
+			height: 310px; 
+			resize: both; 
+			margin-left: 29px; 
+			width: 1124px;
+			box-sizing: border-box;
+		}
+		.error{
+			border-left: 10px solid red;
+			border-right: 10px solid red;
+		}
+		.success{
+			border-left: 10px solid #19be6b;
+			border-right: 10px solid #19be6b;
+		}
+	</style>
+</head>
+<body>
+	<header>
+	     <h3 class="title">JSON校验 / 格式化</h3>
+	</header>
+	<div id="container">
+		<div class="textarea-group">
+			<div class="textarea-wrap">
+				<div class="textarea-rows">
+					<div style="margin-top: 0px;">1</div>
+					<div>2</div>
+					<div>3</div>
+					<div>4</div>
+					<div>5</div>
+					<div>6</div>
+					<div>7</div>
+					<div>8</div>
+					<div>9</div>
+					<div>10</div>
+					<div>11</div>
+					<div>12</div>
+					<div>13</div>
+					<div>14</div>
+					<div>15</div>
+					<div>16</div>
+					<div>17</div>
+					<div>18</div>
+					<div>19</div>
+					<div>20</div>
+					<div>21</div>
+					<div>22</div>
+					<div>23</div>
+					<div>24</div>
+					<div>25</div>
+					<div>26</div>
+					<div>27</div>
+					<div>28</div>
+					<div>29</div>
+					<div>30</div>
+				</div>
+			</div>
+			<textarea type="text" id="json_input" name="json_input" class="json_input layui-textarea" placeholder="	请输入需要检验的json字符串或URL" spellcheck="false">
+			</textarea>
+		</div>
+		<div>
+			<div id="validate">校验</div>
+		</div>
+		<pre id="results" class="layui-elem-quote layui-quote-nm margint10" style="margin-bottom:0;"></pre>
+	</div>
+	<footer>
+	</footer>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="auto-line.js"></script>
+	<script type="text/javascript" src=".parse.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			jsl.interactions.init();
+			$(".json_input,.linenum").setTextareaCount({
+				width: "30px",
+				bgColor: "#ddd",
+				color: "black",
+				display: "inline-block"
+			});
+		});
+	</script>
+</body>
+</html>
